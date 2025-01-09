@@ -3,10 +3,44 @@ main {
   min-height: 80vh;
 }
 
+.btn-outline-success{
+  border-color: #1f1f1f !important;
+  color: #1f1f1f !important;
+  border-radius: 10px !important;
+
+}
+.btn-outline-success:hover{
+  background-color: #1f1f1f !important;
+  color: #fff !important;
+}
+.mr-sm-2{
+  border-radius: 10px !important;
+}
+
 /* Product.js */
 h3 {
   padding: 1rem 0;
 }
+
+/* Adding shadow to the product card */
+.my-3.p-3.rounded.card {
+  border-radius: 20px !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+.card-img{
+  border-radius: 13px !important;
+  height: 300px !important;
+  width: 270px !important;
+}
+
+.img-fluid{
+  border-radius: 20px !important;
+  height: 500px !important;
+  width: 450px !important;
+}
+
 
 /* Rating.js */
 .rating span {

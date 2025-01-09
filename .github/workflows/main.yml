@@ -52,9 +52,10 @@ jobs:
         #   exit 1
         # fi
 
-      - name: Install npm packages and rub build command
+      - name: Install npm packages and run build command
         run: |
           cd ./frontend
+          export NODE_OPTIONS=--openssl-legacy-provider
           npm install
           npm run build
 

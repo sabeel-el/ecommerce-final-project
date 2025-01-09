@@ -101,10 +101,6 @@ jobs:
           key: venv-${{ runner.os }}-${{ hashFiles('**/requirements.txt') }}
           restore-keys: |
             venv-${{ runner.os }}-
-    
-      - name: Debug .venv existence
-        run: |
-          ls -l ./backend/.venv  # Debug step to verify .venv exists
      
       - name: Run tests
         working-directory: ./backend

@@ -41,6 +41,7 @@ jobs:
         working-directory: ./backend
         run: |
           python -m venv .venv
+          ls -l .venv
           source .venv/bin/activate
           pip install --upgrade pip
           pip install -r requirements.txt

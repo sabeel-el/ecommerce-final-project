@@ -103,8 +103,8 @@ jobs:
 
       - name: Run tests
         run: |
-          source .venv/Scripts/activate
           cd ./backend 
+          source .venv/Scripts/activate
           pytest
 
       - name: Upload code

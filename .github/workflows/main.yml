@@ -51,11 +51,14 @@ jobs:
         #   echo "Error: requirements.txt not found in ./backend"
         #   exit 1
         # fi
-
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          
       - name: Install npm packages and run build command
         run: |
           cd ./frontend
-          export NODE_OPTIONS=--openssl-legacy-provider
           npm install
           npm run build
 

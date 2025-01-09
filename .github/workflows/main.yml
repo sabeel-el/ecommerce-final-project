@@ -107,8 +107,9 @@ jobs:
           ls -l ./backend/.venv  # Debug step to verify .venv exists
      
       - name: Run tests
+        working-directory: ./backend
         run: |
-          cd ./backend 
+#cd ./backend 
           source .venv/bin/activate
           pytest
 

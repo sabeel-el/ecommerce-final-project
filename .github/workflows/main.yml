@@ -38,16 +38,19 @@ jobs:
           cache: 'pip'
 
       - name: Install dependencies
+        working-directory: ./backend
         run: |
           python -m venv .venv
           source .venv/bin/activate
           pip install --upgrade pip
-          if [ -f "./backend/requirements.txt" ]; then
-            pip install -r ./backend/requirements.txt
-          else
-            echo "Error: requirements.txt not found in ./backend"
-            exit 1
-          fi
+          pip install -r requirements.txt
+
+        # if [ -f "./backend/requirements.txt" ]; then
+        #   pip install -r ./backend/requirements.txt
+        # else
+        #   echo "Error: requirements.txt not found in ./backend"
+        #   exit 1
+        # fi
 
       - name: Install npm packages and rub build command
         run: |

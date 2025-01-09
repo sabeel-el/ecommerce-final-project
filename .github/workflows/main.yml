@@ -103,14 +103,14 @@ jobs:
 
       - name: Run tests
         run: |
-          source .venv/bin/activate
+          source .venv/Scripts/activate
           cd ./backend 
           pytest
 
       - name: Upload code
         uses: actions/upload-artifact@v4
         with:
-          name: code
+          name: code-${{ github.run_id }}
           path: .
           retention-days: 1
   

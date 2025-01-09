@@ -104,7 +104,7 @@ jobs:
       - name: Run tests
         run: |
           cd ./backend 
-          source .venv/Scripts/activate
+          source .venv/bin/activate
           pytest
 
       - name: Upload code

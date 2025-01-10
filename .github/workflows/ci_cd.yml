@@ -46,6 +46,15 @@ jobs:
           pip install --upgrade pip
           pip install -r requirements.txt
 
+      # Cache the virtual environment instead of uploading it as an artifact
+      - name: Cache virtual environment
+        uses: actions/cache@v3
+        with:
+          path: .venv
+          key: venv-${{ runner.os }}-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            venv-${{ runner.os }}-
+            venv-
        
 
       - name: Install npm packages and run build command
@@ -55,14 +64,6 @@ jobs:
           npm install
           npm run build
 
-      # Cache the virtual environment instead of uploading it as an artifact
-      - name: Cache virtual environment
-        uses: actions/cache@v3
-        with:
-          path: .venv
-          key: venv-${{ runner.os }}-${{ hashFiles('**/requirements.txt') }}
-          restore-keys: |
-            venv-${{ runner.os }}-
 
       - name: Upload code
         uses: actions/upload-artifact@v4
@@ -95,6 +96,7 @@ jobs:
           key: venv-${{ runner.os }}-${{ hashFiles('**/requirements.txt') }}
           restore-keys: |
             venv-${{ runner.os }}-
+            venv-
      
       - name: Run tests
         working-directory: ./backend

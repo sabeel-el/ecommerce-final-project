@@ -58,6 +58,11 @@ h2 {
   padding: 0.5rem 0;
 }
 
+.img-fluid.rounded{
+  height: 150px !important;
+  width: 200px !important;
+}
+
 /* HomeScreen.js (Carousel) */
 .carousel-item-next,
 .carousel-item-prev,

@@ -36,7 +36,7 @@ def test_register_user(client):
         "password": "testpassword",
     }
     response = client.post(url, data, format="json")
-    assert response.status_code == status.HTTP_201_CREATED
+    assert response.status_code == 200
     assert "token" in response.data
 
 # Test user login

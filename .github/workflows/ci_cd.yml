@@ -17,7 +17,7 @@ jobs:
       - name: Upload code
         uses: actions/upload-artifact@v4
         with:
-          name: code
+          name: source-code
           path: .
           retention-days: 1
 
@@ -28,7 +28,7 @@ jobs:
       - name: Download code
         uses: actions/download-artifact@v4
         with:
-          name: code
+          name: source-code
           path: .
 
       - name: Set up Python
@@ -68,7 +68,7 @@ jobs:
       - name: Upload code
         uses: actions/upload-artifact@v4
         with:
-          name: code-${{ github.run_id }}
+          name: build-artifacts-${{ github.run_id }}
           path: .
           retention-days: 1
 
@@ -79,7 +79,7 @@ jobs:
       - name: Download code
         uses: actions/download-artifact@v4
         with:
-          name: code
+          name: build-artifacts-${{ github.run_id }}
           path: .
 
       - name: Set up Python
@@ -107,7 +107,7 @@ jobs:
       - name: Upload code
         uses: actions/upload-artifact@v4
         with:
-          name: code-${{ github.run_id }}
+          name: test-reports-${{ github.run_id }}
           path: .
           retention-days: 1
   

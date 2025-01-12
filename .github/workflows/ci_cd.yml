@@ -119,7 +119,7 @@ jobs:
       - name: Download code
         uses: actions/download-artifact@v4
         with:
-          name: code
+          name: test-reports-${{ github.run_id }}
           path: .
 
       - name: Build Docker Image
